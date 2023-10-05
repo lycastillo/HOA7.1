@@ -16,14 +16,20 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu"
 
+
 - hosts: all
   become: true
   roles:
-    - base
+    -  base
+
+- hosts: all
+  become: true
+  roles:
+    -  base
 
 - hosts: workstations
   become: true
-  roles: 
+  roles:
     - workstations
 
 - hosts: web_servers
